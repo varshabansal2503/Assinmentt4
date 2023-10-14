@@ -1,0 +1,178 @@
+ANS :1 ROATED ARREY RIGHT
+class Solution {
+    public static void rotate(int[] nums, int k) {
+        int n = nums.length;
+        reverseNum(nums,0,n-1);
+        reverseNum(nums,0,k-1);
+        reverseNum(nums,k,n-1);
+        for(int i=0;i<nums.length;i++)
+        {
+            System.out.print(nums[i]+" ");
+        }
+    }
+    public static void reverseNum(int nums[],int si,int ed)
+    {
+        while(si<ed)
+        {
+            int temp=nums[si];
+        nums[si]=nums[ed];
+        nums[ed]=temp;
+        si++;
+        ed--;
+        }
+    }
+    public static void main(String args[])
+    {
+        int nums[]={1,2,3,4,5,6,7};
+        rotate(nums,3);
+
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS:2 REMOVING MINIMUM AND MAXIMUM AN ARREY
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS :3REVERSE STRING
+lass Solution {
+    public static void reverseString(char[] s)
+  {
+        int i=0;
+        char temp=s[0];
+        int j=s.length-1;
+        while(i<j){
+            temp=s[i];
+            s[i]=s[j];
+            s[j]=temp;
+            i++;
+            j--;
+        }
+    
+    
+    }
+     public static void main(String args[])
+    {
+        char[] s={'h','e','l','l','o'};
+        reverseString(s);
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS:5 find an element exist in arrey or not
+public class Roatedarr
+{
+    public static int find_key(int arr[],int key)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]==key)
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+public static void main(String args[])
+    {
+        int arr[]={1,2,3,4,5,6,7};
+        
+       System.out.print(find_key(arr,7));
+
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS :6 You are given an array of integers A of size N.Return the difference between the maximum among all even numbers of A and the minimum among all odd numbers in A.
+public class Printarr{
+    public static void main(String args[])
+    {
+        int arr[]={1,2,3,4,5,6};
+        int maxev=Integer.MIN_VALUE;
+         int minev=Integer.MAX_VALUE;
+
+
+
+            for(int i=0;i<arr.length;i++)
+            {
+                if(arr[i]%2==0)
+                {
+                   if(arr[i]>maxev)
+                   {
+                     maxev=arr[i];
+                   }
+                }
+                if(arr[i]%2!=0)
+                {
+                    if(arr[i]<minev)
+                    {
+                        minev=arr[i];
+                    }
+                }
+            }
+            System.out.println(maxev-minev);
+
+    
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS:7 ou are given an integer T denoting the number of test cases. For each test case, you are given an integer array A.
+
+You have to print the odd and even elements of array A in 2 separate lines.
+
+
+
+
+
+
+ANS :8  Given an array A and an integer B. A pair(i, j) in the array is a good pair if i != j and (A[i] + A[j] == B). Check if any good pair exist or not
+class Solution {
+    public static int numIdenticalPairs(int[] nums) {
+        
+        for(int i=0;i<nums.length;i++)
+        {
+            for(int j=0;j<nums.length;j++)
+            {
+                if( nums[i] + nums[j] && i!= j)
+                {
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    }
+    public static void main(String args[])
+    {
+        int nums[]={1,2,3,3,4,5,6};
+        System.out.println(numIdenticalPairs(nums));
+
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ANS:9 Given an array of integers nums, return the number of good pairs.
+
+A pair (i, j) is called good if nums[i] == nums[j] and i < j.
+
+
+class Solution {
+    public static int numIdenticalPairs(int[] nums) {
+        int c1=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            for(int j=0;j<nums.length;j++)
+            {
+                if( nums[i] == nums[j] && i < j)
+                {
+                    c1++;
+                }
+            }
+        }
+        return c1;
+    }
+    public static void main(String args[])
+    {
+        int nums[]={1,2,3,3,4,5,6};
+        System.out.println(numIdenticalPairs(nums));
+
+    }
+}
+
+
+
